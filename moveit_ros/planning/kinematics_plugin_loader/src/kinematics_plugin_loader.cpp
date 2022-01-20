@@ -38,6 +38,7 @@
 #include <moveit/rdf_loader/rdf_loader.h>
 #include <pluginlib/class_loader.hpp>
 #include <boost/thread/mutex.hpp>
+#include <boost/bind/placeholders.hpp>
 #include <sstream>
 #include <vector>
 #include <map>
