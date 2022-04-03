@@ -112,6 +112,7 @@ add_library(command_list_manager SHARED
   src/plan_components_builder.cpp
 )
 ament_target_dependencies(command_list_manager ${THIS_PACKAGE_INCLUDE_DEPENDS})
+target_link_libraries(command_list_manager planning_context_loader_base joint_limits_common trajectory_generation_common)
 
 #############
 ## Plugins ##
