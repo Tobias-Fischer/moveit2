@@ -85,11 +85,6 @@ set(THIS_PACKAGE_INCLUDE_DEPENDS
 ## Libraries ##
 ###############
 
-add_library(planning_context_loader_base SHARED
-  src/planning_context_loader.cpp
-)
-ament_target_dependencies(planning_context_loader_base ${THIS_PACKAGE_INCLUDE_DEPENDS})
-
 add_library(joint_limits_common SHARED
   src/joint_limits_aggregator.cpp
   src/joint_limits_container.cpp
@@ -99,6 +94,12 @@ add_library(joint_limits_common SHARED
   src/cartesian_limits_aggregator.cpp
 )
 ament_target_dependencies(joint_limits_common ${THIS_PACKAGE_INCLUDE_DEPENDS})
+
+add_library(planning_context_loader_base SHARED
+  src/planning_context_loader.cpp
+)
+ament_target_dependencies(planning_context_loader_base ${THIS_PACKAGE_INCLUDE_DEPENDS})
+target_link_libraries(planning_context_loader_base joint_limits_common)
 
 add_library(trajectory_generation_common SHARED
   src/trajectory_functions.cpp
