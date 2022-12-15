@@ -40,12 +40,14 @@
 #include <moveit_setup_framework/qt/rviz_panel.hpp>
 #include <QWidget>
 
+#include <moveit_setup_framework_export.h>
+
 namespace moveit_setup
 {
 /**
  * @brief The GUI code for one SetupStep
  */
-class SetupStepWidget : public QWidget
+class MOVEIT_SETUP_FRAMEWORK_EXPORT SetupStepWidget : public QWidget
 {
   Q_OBJECT
 public:

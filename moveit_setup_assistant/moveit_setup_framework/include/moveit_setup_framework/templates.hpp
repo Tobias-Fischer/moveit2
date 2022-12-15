@@ -38,6 +38,8 @@
 #include <moveit_setup_framework/generated_file.hpp>
 #include <string>
 
+#include <moveit_setup_framework_export.h>
+
 namespace moveit_setup
 {
 /**
@@ -69,7 +71,7 @@ public:
 
   bool write() override;
 
-  static std::vector<TemplateVariable> variables_;
+  static MOVEIT_SETUP_FRAMEWORK_EXPORT std::vector<TemplateVariable> variables_;
 };
 
 }  // namespace moveit_setup
