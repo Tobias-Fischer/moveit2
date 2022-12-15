@@ -5,6 +5,8 @@ project(moveit_setup_framework)
 find_package(moveit_common REQUIRED)
 moveit_package()
 
+set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
+
 find_package(ament_cmake REQUIRED)
 find_package(ament_cmake_ros REQUIRED)
 find_package(ament_index_cpp REQUIRED)
