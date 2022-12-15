@@ -205,7 +205,7 @@ void StartScreenWidget::focusGiven()
   std::filesystem::path pkg_path = setup_step_.getPackagePath();
   if (!pkg_path.empty())
   {
-    stack_path_->setPath(pkg_path);
+    stack_path_->setPath(pkg_path.string());
     select_mode_->btn_exist_->click();
     return;
   }
@@ -213,7 +213,7 @@ void StartScreenWidget::focusGiven()
   std::filesystem::path urdf_path = setup_step_.getURDFPath();
   if (!urdf_path.empty())
   {
-    urdf_file_->setPath(urdf_path);
+    urdf_file_->setPath(urdf_path.string());
     select_mode_->btn_new_->click();
   }
 }
