@@ -79,7 +79,7 @@ void StartScreenWidget::onInit()
   right_image_label_ = new QLabel(this);
   auto image_path = getSharePath("moveit_setup_assistant") / "resources/MoveIt_Setup_Assistant2.png";
 
-  if (right_image_->load(image_path.c_str()))
+  if (right_image_->load(image_path.string().c_str()))
   {
     right_image_label_->setPixmap(QPixmap::fromImage(*right_image_));
     right_image_label_->setMinimumHeight(384);  // size of right_image_label_
@@ -205,7 +205,7 @@ void StartScreenWidget::focusGiven()
   std::filesystem::path pkg_path = setup_step_.getPackagePath();
   if (!pkg_path.empty())
   {
-    stack_path_->setPath(pkg_path);
+    stack_path_->setPath(pkg_path.string());
     select_mode_->btn_exist_->click();
     return;
   }
@@ -213,7 +213,7 @@ void StartScreenWidget::focusGiven()
   std::filesystem::path urdf_path = setup_step_.getURDFPath();
   if (!urdf_path.empty())
   {
-    urdf_file_->setPath(urdf_path);
+    urdf_file_->setPath(urdf_path.string());
     select_mode_->btn_new_->click();
   }
 }
