@@ -5,6 +5,9 @@ project(moveit_ros_benchmarks LANGUAGES CXX)
 find_package(moveit_common REQUIRED)
 moveit_package()
 
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(tf2_eigen REQUIRED)
